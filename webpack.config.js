@@ -5,7 +5,6 @@ const TerserPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack')
-const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 
 const ROOT = path.resolve(__dirname, 'src')
 const NLP_DIRNAME = 'nlp'
@@ -101,10 +100,6 @@ const resolveConfig = {
   },
   fallback: {
     util: require.resolve('util'),
-    "fs": false,
-    "path": require.resolve("path-browserify"),
-    "crypto": require.resolve("crypto-browserify"),
-    "stream": require.resolve("stream-browserify") 
   },
 }
 
@@ -129,7 +124,6 @@ const babelLoaderConfig = {
         '@babel/plugin-proposal-object-rest-spread',
         '@babel/plugin-proposal-class-properties',
         '@babel/plugin-transform-runtime',
-        '@babel/plugin-syntax-top-level-await'
       ],
     },
   },
@@ -190,7 +184,6 @@ function botonicDevConfig(mode) {
     devtool: sourceMap(mode),
     entry: path.resolve(WEBPACK_ENTRIES_DIRNAME, WEBPACK_ENTRIES.DEV),
     target: 'web',
-    experiments: {     topLevelAwait: true   },
     module: {
       rules: [
         babelLoaderConfig,
@@ -236,9 +229,6 @@ function botonicDevConfig(mode) {
 
 function botonicWebchatConfig(mode) {
   return {
-    stats: {
-      warningsFilter: [/Critical dependency/],
-    },
     optimization: optimizationConfig,
     mode: mode,
     devtool: sourceMap(mode),
@@ -319,8 +309,6 @@ function botonicNodeConfig(mode) {
     mode: mode,
     devtool: sourceMap(mode),
     target: 'node',
-    externalsPresets: { node: true }, // in order to ignore built-in modules like path, fs, etc.
-    externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
     entry: path.resolve(WEBPACK_ENTRIES_DIRNAME, WEBPACK_ENTRIES.NODE),
     resolve: resolveConfig,
     output: {
@@ -339,7 +327,6 @@ function botonicNodeConfig(mode) {
     },
     plugins: [
       new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: ['dist'] }),
-      new NodePolyfillPlugin(),
       imageminPlugin,
       new webpack.DefinePlugin({
         IS_BROWSER: false,

@@ -5,6 +5,7 @@ export default class extends React.Component {
   static contextType = RequestContext
 
   render() {
+    this.context.setLocale('id')
     let _ = this.context.getString
     return (
       <>

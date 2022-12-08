@@ -1,16 +1,7 @@
-const { User } = require('../sequelize/models')
-
-const firstName = await User.findOne({
-  where: {
-    id: 2
-  }
-})
-
 export default {
     greetings: {
       intro: [
-        'firstName',
-        'lastaname'
+        'Selamat datang! 😄',
       ],
       explanation: [
         "I'm a bot who has been trained with some intents, so I have learnt from examples.",
