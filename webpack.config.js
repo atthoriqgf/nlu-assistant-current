@@ -129,7 +129,7 @@ const babelLoaderConfig = {
         '@babel/plugin-proposal-object-rest-spread',
         '@babel/plugin-proposal-class-properties',
         '@babel/plugin-transform-runtime',
-        '@babel/plugin-syntax-top-level-await'
+        '@babel/plugin-syntax-top-level-await',
       ],
     },
   },
@@ -217,6 +217,7 @@ function botonicDevConfig(mode) {
         template: path.resolve(BOTONIC_PATH, 'src', TEMPLATES.WEBCHAT),
         filename: 'index.html',
       }),
+      new webpack.ContextReplacementPlugin(/sequelize/),
       new webpack.HotModuleReplacementPlugin(),
       imageminPlugin,
       new webpack.DefinePlugin({
@@ -265,6 +266,7 @@ function botonicWebchatConfig(mode) {
         filename: 'index.html',
       }),
       imageminPlugin,
+      new webpack.ContextReplacementPlugin(/sequelize/),
       new webpack.DefinePlugin({
         IS_BROWSER: true,
         IS_NODE: false,
@@ -303,6 +305,7 @@ function botonicWebviewsConfig(mode) {
         filename: 'index.html',
       }),
       imageminPlugin,
+      new webpack.ContextReplacementPlugin(/sequelize/),
       new webpack.DefinePlugin({
         IS_BROWSER: true,
         IS_NODE: false,
@@ -354,6 +357,7 @@ function botonicNodeConfig(mode) {
           },
         ],
       }),
+      new webpack.ContextReplacementPlugin(/sequelize/),
     ],
   }
 }
