@@ -1,0 +1,23 @@
+intent: Weather
+
+samples:
+  - beri tahu saya jika di luar dingin
+  - apakah besok akan hangat
+  - Saya ingin tahu suhunya
+  - apakah kamu tahu kalau sekarang dingin
+  - apakah akan dingin besok
+  - suhu
+  - tunjukkan suhunya
+  - Saya ingin tahu suhu di London
+  - berapa suhu di Munich pada hari Senin
+  - apakah kamu tahu kalau di luar dingin sekarang
+  - di New York disana dingin
+  - suhu hari ini
+  - apakah sekarang panas
+  - suhu malam ini
+  - suhu di Bangkok
+  - suhu di Moskow
+  - berapa suhu di Moskow dalam Celcius
+  - baiklah malam ini dingin di Aspen
+  - tunjukkan suhu untuk akhir pekan ini
+  - cek suhu

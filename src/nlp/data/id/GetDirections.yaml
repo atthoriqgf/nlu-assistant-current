@@ -1,0 +1,23 @@
+intent: GetDirections
+
+samples:
+  - bagaimana cara saya sampai ke stasiun kereta?
+  - cari petunjuk ke ATM terdekat
+  - bagaimana cara saya pulang dengan naik E120
+  - temukan rute tercepat ke Baxter Building 42nd street Madison Avenue Manhattan
+  - bagaimana menuju ke Main Street menghindari lalu lintas yang padat
+  - bisakah Anda mengarahkan saya ke kantor seluler
+  - dapatkah Anda menemukan saya rute terbaik ke Ohio
+  - petunjuk arah ke bar dengan lalu lintas lengang
+  - tunjukkan jalan pulang
+  - bagaimana saya bisa ke San Diego dari rumah saya
+  - bagaimana saya bisa pergi ke London?
+  - arah ke New York menghindari lalu lintas padat
+  - beri aku petunjuk arah ke Starbucks
+  - bagaimana menuju ke pom bensin terdekat
+  - apa cara terbaik untuk pulang
+  - arah ke New York menghindari jalan tol
+  - arah dari Denver ke Ohio
+  - Mulai navigasi ke Starbucks terdekat melalui rute tercepat
+  - tunjukkan arah ke bandara Heathrow
+  - temukan petunjuk arah ke toko kelontong terdekat
